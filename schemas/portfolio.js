@@ -19,6 +19,13 @@ export default {
             validation: Rule => Rule.required()
         }, 
         {
+            name: 'categories',
+            title: 'Categories',
+            type: 'array',
+            //validation: Rule => Rule.required(),
+            of: [{type: 'reference', to: {type: 'category'}}],
+        },   
+        {
             name: 'href',
             type: 'url',
             validation: Rule => Rule.uri({
